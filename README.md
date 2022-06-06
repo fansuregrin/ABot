@@ -27,6 +27,7 @@ This is a simple chat robot for [tencent-qq](https://im.qq.com) based on [go-cqh
 - trans: translate some sentences into target language.
 
 ## Installation
+### Install go-cqhttp and cofig it
 The most important thing you must notice is you should install [go-cqhttp](https://github.com/Mrs4s/go-cqhttp) on your system. Then, you should config it well. This bot uses http protocal to communicate with go-cqhttp, so your go-cqhttp configuration maybe like this.
 
 ```yml
@@ -151,3 +152,22 @@ servers:
         #<<: *default # 引用默认中间件
 ```
 
+### Run this bot
+#### (1) Run through [`poetry`](https://python-poetry.org/)
+Firstly, Downloads the source codes from this repository, and changes into the folder. Then, run `poetry init`.
+
+Secondly, start this bot by typing `poetry run python3 main.py`.
+
+
+#### (2) Run directly with python
+Firstly, you should install some required dependencies. Downloads the source codes from this repository, and changes into the folder. Then, runs this following command.
+
+```bash
+pip install -r requirements.txt
+```
+
+Secondly, start this bot by typing the following command.
+
+```
+python3 main.py
+```
