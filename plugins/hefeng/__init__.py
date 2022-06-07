@@ -14,7 +14,8 @@ def tq_cmd(event):
     if sub_cmd == 'help':
         outcome = '''hf help 显示帮助手册
 hf tq 查询城市天气
-hf sun 查询城市日出日落'''
+hf sun 查询城市日出日落
+hf moon 查询城市月出月落'''
     elif sub_cmd == 'tq':
         city_start = event.raw_msg.find(sub_cmd) + len(sub_cmd)
         city = event.raw_msg[city_start::].strip()

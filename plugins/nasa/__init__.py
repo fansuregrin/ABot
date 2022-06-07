@@ -23,6 +23,8 @@ nasa apod [YY-mm-dd] 获取NASA天文每日一图'''
             outcome = apod(nasa_api_key, date_)
         else:
             outcome = apod(nasa_api_key)
+    else:
+        outcome = f'[CQ:at,qq={event.sender_id}]暂无[{sub_cmd}]子命令!'
     
     return outcome
 
