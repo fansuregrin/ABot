@@ -154,7 +154,7 @@ servers:
 
 ### Run this bot
 #### (1) Run through [`poetry`](https://python-poetry.org/)
-Firstly, Downloads the source codes from this repository, and changes into the folder. Then, run `poetry init`.
+Firstly, Downloads the source codes from this repository, and changes into the folder. Then, run `poetry install`.
 
 Secondly, start this bot by typing `poetry run python3 main.py`.
 

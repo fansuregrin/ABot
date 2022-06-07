@@ -1,4 +1,3 @@
-import outcome
 from config import nasa_api_key
 from command import register_cmd
 from .nasa import apod
