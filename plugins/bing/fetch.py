@@ -26,7 +26,7 @@ def get_bing_iotd():
 
     if os.path.exists(target_path):
         return outcome
-    print(img_url)
+    
     img_bytes = requests.get(img_url).content
     if not path.exists(bing_pics):
         os.mkdir(bing_pics)
