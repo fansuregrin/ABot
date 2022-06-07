@@ -42,10 +42,10 @@ class MessageEvent(Event):
                     self.reply(outcome)
     
     def get_sub_cmd(self, cmd):
-        sub_cmd_start = self.raw_msg.find(cmd) + len(cmd)
-        try:
+        if cmd in self.raw_msg.find:
+            sub_cmd_start = self.raw_msg.find(cmd) + len(cmd)
             sub_cmd = self.raw_msg[sub_cmd_start::].strip().split()[0]
-        except:
+        else:
             sub_cmd = ''
 
         return sub_cmd

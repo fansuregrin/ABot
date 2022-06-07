@@ -1,9 +1,10 @@
 from command import register_cmd
 from .stardict import StarDict
+from config import ecdict_db_path
 
 
 def query_word(event):
-    dict = StarDict('./plugins/ecdict/ecdict.sqlite')
+    dict = StarDict(ecdict_db_path)
     word_start = event.raw_msg.strip().find('qw') + len('qw')
     word = event.raw_msg[word_start::].strip()
     if not word:

@@ -6,7 +6,7 @@ authors = ["fansuregrin <1134366185@qq.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 Flask = "^2.1.2"
 requests = "^2.27.1"
 pytz = "^2022.1"
