@@ -18,6 +18,9 @@ def get_bing_iotd():
     img_descp = tree.xpath('/html/head/meta[@property="og:description"]/@content')[0]
     img_url = tree.xpath('/html/head/link[@id="preloadBg"]/@href')[0]
 
+    if not img_url.startswith('http'):
+        img_url = url + img_url
+
     pattern = '.*?id=(.*?)&.*?'
     img_name = re.findall(pattern, img_url)[0]
     
@@ -26,7 +29,7 @@ def get_bing_iotd():
 
     if os.path.exists(target_path):
         return outcome
-    print(img_url)
+    
     img_bytes = requests.get(img_url).content
     if not path.exists(bing_pics):
         os.mkdir(bing_pics)
