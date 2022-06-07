@@ -1,3 +1,4 @@
+from posixpath import split
 from utils import format_timestamp
 from config import start_marks, commands, address, port, bot_name
 import requests
@@ -44,7 +45,8 @@ class MessageEvent(Event):
     def get_sub_cmd(self, cmd):
         if cmd in self.raw_msg.find:
             sub_cmd_start = self.raw_msg.find(cmd) + len(cmd)
-            sub_cmd = self.raw_msg[sub_cmd_start::].strip().split()[0]
+            remaining = self.raw_msg[sub_cmd_start::].strip()
+            sub_cmd = remaining.split()[0] if remaining else ''
         else:
             sub_cmd = ''
 
