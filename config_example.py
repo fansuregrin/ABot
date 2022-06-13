@@ -25,3 +25,6 @@ bd_key = 'xxxxxxxxxxxxxxxxxxxx'
 
 # NASA api_key
 nasa_api_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+# ecdict.sqlite
+ecdict_db_path = 'path/to/ecdict.sqlite'

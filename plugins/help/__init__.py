@@ -14,7 +14,8 @@ hf 和风天气相关，可以使用hf help查看帮助
 eatwhat 看看吃什么好
 trans 翻译，需带上目标语言和翻译内容
 qw 查英语单词
-nasa NASA相关"""
+nasa NASA相关
+qtm 查询电视剧和电影"""
 
 
 register_cmd(cmd, help_cmd)

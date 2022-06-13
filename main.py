@@ -1,12 +1,12 @@
 from flask import Flask, request
 from event import create_event
-from plugins import archpkg, bing, eatwhat, ecdict, echo, hefeng, help, nasa, qqgroup, translate
+from plugins import archpkg, bing, eatwhat, ecdict, echo, hefeng, help, moviedb, nasa, qqgroup, translate
 import logging
 import threading
 
 
 app = Flask(__name__)
-# logging.getLogger('werkzeug').disabled = True
+logging.getLogger('werkzeug').disabled = True
 
 
 @app.route('/', methods=['POST'])
