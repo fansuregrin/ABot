@@ -60,8 +60,8 @@ class PrivateMessage(MessageEvent):
     def __init__(self, post_data: dict):
         super().__init__(post_data)
         self.sub_type = post_data['sub_type']
-        self.temp_src = post_data['temp_source']
         self.__print_log__()
+        self.triggle_command()
 
     def __print_log__(self):
         print("\033[1m->\033[0m [\033[34m{}\033[0m<\033[32m{}\033[0m> at (\033[31m{}\033[0m)]: {}".format(
@@ -69,6 +69,20 @@ class PrivateMessage(MessageEvent):
             self.sender_id, 
             self.post_time, 
             self.raw_msg))
+
+    def send_private_msg(self, message):
+        url = base_url + '/send_private_msg'
+        payload = {
+            'user_id': self.sender_id,
+            'message': message
+        }
+        rsp = requests.get(url=url, params=payload).json()
+        if rsp['status'] == 'ok':
+            print('\033[1m<-\033[0m [\033[34m{}\033[0m<\033[32m{}\033[0m> send to person<\033[33m{}\033[0m>]: {}'.format(bot_name, 
+            self.self_id, self.sender_id, message))
+
+    def reply(self, message):
+        self.send_private_msg(message)
 
 
 class GroupMessageEvent(MessageEvent):
